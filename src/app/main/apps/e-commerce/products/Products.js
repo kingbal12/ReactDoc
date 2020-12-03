@@ -52,7 +52,7 @@ function Products(props) {
 				<div className="w-full row">
 					<h1>
 						<span className="w-50">Patient Overview</span>
-						<span style={{marginRight: 5 + 'em'}}><Clock format={'MM/DD/YYYY HH:mm:ss'} ticking={true} timezone={'US/Pacific'}/></span>
+						<span style={{marginRight: 5 + 'em'}}><Clock format={'MM/DD/YYYY HH:mm:ss'} ticking={true} timezone={'asia/seoul'}/></span>
 					</h1>
 					
 					
