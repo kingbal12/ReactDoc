@@ -43,6 +43,7 @@ const navigationConfig = [
 				type: 'item',
 				icon: 'home',
 				url: '/apps/dashboards/project'
+				// url: '/apps/home' url 변경을 config에서 해주면 잘 됨
 			},
 			{
 				id: 'file-manager',
