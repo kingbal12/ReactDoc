@@ -1,5 +1,5 @@
 import withReducer from 'app/store/withReducer';
-import React from 'react';
+import React, { Component } from 'react';
 import reducer from '../store';
 import FusePageSimple from '@fuse/core/FusePageSimple';
 import { makeStyles } from '@material-ui/core/styles';
@@ -17,15 +17,17 @@ import Icon from '@material-ui/core/Icon';
 import IconButton from '@material-ui/core/IconButton';
 import Paper from '@material-ui/core/Paper';
 import FuseAnimateGroup from '@fuse/core/FuseAnimateGroup';
-import Clock from 'react-digital-clock';
+import Clock from 'react-live-clock';
 
 const useStyles = makeStyles(theme => ({
 	layoutRoot: {}
 }));
 
+
 function Products(props) {
 	const classes = useStyles(props);
 	const { t } = useTranslation('examplePage');
+	
 	return (
 		
 		<FusePageSimple
@@ -40,22 +42,24 @@ function Products(props) {
 			// 		<tr>
 			// 		<th></th>
 			// 		<td><h1>Patient Overview</h1></td>
-			// 		<td class="text-right"><Clock  format= {'hh-mm-ss'}/></td>
+			// 		<td></td>
+			// 		<td class="text-right"><Clock format={'MM/DD/YYYY HH:mm:ss'} ticking={true} timezone={'US/Pacific'}/></td>
 			// 		</tr>
 			// 	</tbody>
 			// </table>
-			<div className="container">
-				<div className="row">
-					<div className="col-5">
-						<h1>
-							<span>Patient Overview</span>
-							<span style={{marginLeft: 90 + 'em'}}><Clock/></span>   
-						</h1>
-					</div>
+			
+			
+				<div className="w-full row">
+					<h1>
+						<span className="w-50">Patient Overview</span>
+						<span style={{marginRight: 5 + 'em'}}><Clock format={'MM/DD/YYYY HH:mm:ss'} ticking={true} timezone={'US/Pacific'}/></span>
+					</h1>
+					
 					
 				</div>
 				
-			</div>
+			
+			
 			
 			 
 		}
@@ -411,7 +415,8 @@ function Products(props) {
 					</div>
 				</FuseAnimateGroup>
 			</div>
-			</div>
+
+		</div>
 
 
 			

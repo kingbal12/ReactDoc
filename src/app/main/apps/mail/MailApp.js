@@ -14,6 +14,7 @@ import reducer from './store';
 import { getFilters } from './store/filtersSlice';
 import { getFolders } from './store/foldersSlice';
 import { getLabels } from './store/labelsSlice';
+import FusePageSimple from '@fuse/core/FusePageSimple';
 
 function MailApp(props) {
 	const dispatch = useDispatch();
@@ -28,14 +29,14 @@ function MailApp(props) {
 	}, [dispatch]);
 
 	return (
-		<FusePageCarded
+		<FusePageSimple
 			classes={{
 				root: 'w-full',
 				content: 'flex flex-col',
 				header: 'items-center min-h-72 h-72 sm:h-136 sm:min-h-136'
 			}}
 			header={<MailAppHeader pageLayout={pageLayout} />}
-			contentToolbar={routeParams.mailId ? <MailToolbar /> : <MailsToolbar />}
+			// contentToolbar={routeParams.mailId ? <MailToolbar /> : <MailsToolbar />}
 			content={routeParams.mailId ? <MailDetails /> : <MailList />}
 			// leftSidebarHeader={<MailAppSidebarHeader />}
 			// leftSidebarContent={<MailAppSidebarContent />}

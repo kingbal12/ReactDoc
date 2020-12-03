@@ -50,7 +50,7 @@ function MailToolbar(props) {
 	return (
 		<div className="flex flex-1 items-center sm:px-8">
 			<div className="">
-				Patients
+				Notice
 			</div>
 			{/* Patients 옆쪽 체크박스, 아래로 내리면 나타나는 화살표 부분 현재는 필요가 없어서 주석처리*/}
 			{/* <Checkbox

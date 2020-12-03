@@ -79,11 +79,12 @@ const MailListItem = props => {
 			<div className="flex flex-1 flex-col relative overflow-hidden">
 				<div className="flex items-center justify-between px-16 pb-8">
 					<div className="flex items-center">
-						{props.mail.from.avatar ? (
+						{/* {props.mail.from.avatar ? (
 							<Avatar alt={props.mail.from.name} src={props.mail.from.avatar} />
 						) : (
 							<Avatar className={classes.avatar}>{props.mail.from.name[0]}</Avatar>
-						)}
+						)} */}
+						{/* 프로필 사진이 나왔던부분 */}
 						<Typography variant="subtitle1" className="mx-8">
 							{props.mail.from.name}
 						</Typography>
@@ -93,9 +94,10 @@ const MailListItem = props => {
 
 				<div className="flex flex-col px-16 py-0">
 					<Typography className="truncate">{props.mail.subject}</Typography>
-					<Typography color="textSecondary" className="truncate">
+					{/* <Typography color="textSecondary" className="truncate">
 						{_.truncate(props.mail.message.replace(/<(?:.|\n)*?>/gm, ''), { length: 180 })}
-					</Typography>
+					</Typography> */}
+					{/* 본문이 180자 까지 나왔던 부분 */}
 				</div>
 
 				<div className="flex justify-end px-12">
