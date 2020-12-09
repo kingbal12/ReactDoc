@@ -32,7 +32,7 @@ function MailApp(props) {
 		<FusePageSimple
 			classes={{
 				root: 'w-full',
-				content: 'flex flex-col',
+				content: 'flex flex-col mt-40',
 				header: 'items-center min-h-72 h-72 sm:h-136 sm:min-h-136'
 			}}
 			header={<MailAppHeader pageLayout={pageLayout} />}

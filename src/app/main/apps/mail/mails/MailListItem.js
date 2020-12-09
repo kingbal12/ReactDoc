@@ -11,31 +11,46 @@ import { withRouter, useParams } from 'react-router-dom';
 import MailChip from '../MailChip';
 import { toggleInSelectedMails } from '../store/mailsSlice';
 import { selectLabelsEntities } from '../store/labelsSlice';
+import Accordion from '@material-ui/core/Accordion';
+import AccordionSummary from '@material-ui/core/AccordionSummary';
+import AccordionDetails from '@material-ui/core/AccordionDetails';
+import ExpandMoreIcon from '@material-ui/icons/ExpandMore';
 
 const pathToRegexp = require('path-to-regexp');
 
 const useStyles = makeStyles(theme => ({
-	mailItem: {
-		borderBottom: `1px solid  ${theme.palette.divider}`,
+	// mailItem: {
+	// 	borderBottom: `1px solid  ${theme.palette.divider}`,
 
-		'&.unread': {
-			background: 'rgba(0,0,0,0.03)'
-		},
-		'&.selected': {
-			'&::after': {
-				content: '""',
-				position: 'absolute',
-				left: 0,
-				display: 'block',
-				height: '100%',
-				width: 3,
-				backgroundColor: theme.palette.primary.main
-			}
-		}
-	},
-	avatar: {
-		backgroundColor: theme.palette.primary[500]
-	}
+	// 	'&.unread': {
+	// 		background: 'rgba(0,0,0,0.03)'
+	// 	},
+	// 	'&.selected': {
+	// 		'&::after': {
+	// 			content: '""',
+	// 			position: 'absolute',
+	// 			left: 0,
+	// 			display: 'block',
+	// 			height: '100%',
+	// 			width: 3,
+	// 			backgroundColor: theme.palette.primary.main
+	// 		}
+	// 	}
+	// },
+	// avatar: {
+	// 	backgroundColor: theme.palette.primary[500]
+	// },
+	root: {
+		width: '95%',
+		marginLeft: '40px'
+	  },
+	  heading: {
+		fontSize: theme.typography.pxToRem(15),
+		fontWeight: theme.typography.fontWeightRegular,
+	  },
+	  
+	  
+	
 }));
 
 const MailListItem = props => {
@@ -49,7 +64,25 @@ const MailListItem = props => {
 	const checked = selectedMailIds.length > 0 && selectedMailIds.find(id => id === props.mail.id) !== undefined;
 
 	return (
-		<ListItem
+		<div className="flex">
+			<div className={classes.root}>
+				<Accordion>
+					<AccordionSummary
+					expandIcon={<ExpandMoreIcon />}
+					aria-controls="panel1a-content"
+					id="panel1a-header"
+					>
+					<Typography className={classes.heading}>{props.mail.from.name}</Typography>
+					</AccordionSummary>
+					<AccordionDetails>
+					<Typography>
+						{props.mail.subject}
+					</Typography>
+					</AccordionDetails>
+				</Accordion>
+			</div>
+		</div>
+		/* <ListItem
 			dense
 			button
 			onClick={() =>
@@ -66,25 +99,13 @@ const MailListItem = props => {
 				!props.mail.read && 'unread',
 				'py-16 px-0 md:px-8'
 			)}
-		>
-			{/* 메일 리스트 사람의 행 별로 왼쪽에 생겼던 체크박스 */}
-			{/* <Checkbox
-				tabIndex={-1}
-				disableRipple
-				checked={checked}
-				onChange={() => dispatch(toggleInSelectedMails(props.mail.id))}
-				onClick={ev => ev.stopPropagation()}
-			/> */}
+		> */
+			
 
-			<div className="flex flex-1 flex-col relative overflow-hidden">
+			/* <div className="flex flex-1 flex-col relative overflow-hidden">
 				<div className="flex items-center justify-between px-16 pb-8">
 					<div className="flex items-center">
-						{/* {props.mail.from.avatar ? (
-							<Avatar alt={props.mail.from.name} src={props.mail.from.avatar} />
-						) : (
-							<Avatar className={classes.avatar}>{props.mail.from.name[0]}</Avatar>
-						)} */}
-						{/* 프로필 사진이 나왔던부분 */}
+						
 						<Typography variant="subtitle1" className="mx-8">
 							{props.mail.from.name}
 						</Typography>
@@ -93,12 +114,12 @@ const MailListItem = props => {
 				</div>
 
 				<div className="flex flex-col px-16 py-0">
-					<Typography className="truncate">{props.mail.subject}</Typography>
-					{/* <Typography color="textSecondary" className="truncate">
+					<Typography className="truncate">{props.mail.subject}</Typography> */
+					/* <Typography color="textSecondary" className="truncate">
 						{_.truncate(props.mail.message.replace(/<(?:.|\n)*?>/gm, ''), { length: 180 })}
-					</Typography> */}
-					{/* 본문이 180자 까지 나왔던 부분 */}
-				</div>
+					</Typography> */
+					/* 본문이 180자 까지 나왔던 부분 */
+				/* </div>
 
 				<div className="flex justify-end px-12">
 					{!_.isEmpty(labels) &&
@@ -112,7 +133,8 @@ const MailListItem = props => {
 						))}
 				</div>
 			</div>
-		</ListItem>
+		</ListItem> */
+		
 	);
 };
 

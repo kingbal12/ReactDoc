@@ -3,9 +3,12 @@ import IconButton from '@material-ui/core/IconButton';
 import Paper from '@material-ui/core/Paper';
 import Typography from '@material-ui/core/Typography';
 import React, { useState } from 'react';
+import { useHistory } from "react-router-dom";
 
 function Widget1(props) {
 	const [currentRange, setCurrentRange] = useState(props.widget.currentRange);
+
+	const history = useHistory();
 
 	function handleChangeRange(ev) {
 		setCurrentRange(ev.target.value);
@@ -17,7 +20,7 @@ function Widget1(props) {
 				<div className="px-12">
 					Notice
 				</div>
-				<IconButton aria-label="more" href="/apps/mail/inbox">
+				<IconButton aria-label="more" onClick={() => history.push("/apps/mail/inbox")}>
 						<Icon color="grey" >more_vert</Icon>
 				</IconButton>
 			</div>
