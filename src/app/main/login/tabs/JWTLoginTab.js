@@ -3,7 +3,6 @@ import Button from '@material-ui/core/Button';
 import Icon from '@material-ui/core/Icon';
 import IconButton from '@material-ui/core/IconButton';
 import InputAdornment from '@material-ui/core/InputAdornment';
-import Typography from '@material-ui/core/Typography';
 import Formsy from 'formsy-react';
 import React, { useEffect, useRef, useState } from 'react';
 import { useDispatch, useSelector } from 'react-redux';
@@ -115,55 +114,6 @@ function JWTLoginTab(props) {
 				</Button>
 			</Formsy>
 
-			{/* <table className="text-center w-full mt-32">
-				<thead>
-					<tr>
-						<th>
-							<Typography className="font-600" color="textSecondary">
-								Role
-							</Typography>
-						</th>
-						<th>
-							<Typography className="font-600" color="textSecondary">
-								Username
-							</Typography>
-						</th>
-						<th>
-							<Typography className="font-600" color="textSecondary">
-								Password
-							</Typography>
-						</th>
-					</tr>
-				</thead>
-				<tbody>
-					<tr>
-						<td>
-							<Typography className="font-600" color="textSecondary">
-								Admin
-							</Typography>
-						</td>
-						<td>
-							<Typography>admin</Typography>
-						</td>
-						<td>
-							<Typography>admin</Typography>
-						</td>
-					</tr>
-					<tr>
-						<td>
-							<Typography className="font-600" color="textSecondary">
-								Staff
-							</Typography>
-						</td>
-						<td>
-							<Typography>staff</Typography>
-						</td>
-						<td>
-							<Typography>staff</Typography>
-						</td>
-					</tr>
-				</tbody>
-			</table> */}
 		</div>
 	);
 }

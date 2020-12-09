@@ -1,7 +1,5 @@
 import FuseAnimate from '@fuse/core/FuseAnimate';
-import Hidden from '@material-ui/core/Hidden';
 import Icon from '@material-ui/core/Icon';
-import IconButton from '@material-ui/core/IconButton';
 import Input from '@material-ui/core/Input';
 import Paper from '@material-ui/core/Paper';
 import { ThemeProvider } from '@material-ui/core/styles';
@@ -10,46 +8,57 @@ import React from 'react';
 import { useDispatch, useSelector } from 'react-redux';
 import { selectMainTheme } from 'app/store/fuse/settingsSlice';
 import { setContactsSearchText } from './store/contactsSlice';
-import Clock from 'react-digital-clock';
+import Clock from 'react-live-clock';
+import Breadcrumbs from '@material-ui/core/Breadcrumbs';
+import HomeIcon from '@material-ui/icons/Home';
+import Link from '@material-ui/core/Link';
+import NavigateNextIcon from '@material-ui/icons/NavigateNext';
+import { makeStyles } from '@material-ui/core/styles';
+
+function handleClick(event) {
+	// event.preventDefault();
+	console.info('You clicked a breadcrumb.');
+  }
+
+const useStyles = makeStyles((theme) => ({
+root: {
+	'& > * + *': {
+	marginTop: theme.spacing(2),
+	},
+},
+}));
 
 function ContactsHeader(props) {
 	const dispatch = useDispatch();
 	const searchText = useSelector(({ contactsApp }) => contactsApp.contacts.searchText);
 	const mainTheme = useSelector(selectMainTheme);
+	const classes = useStyles();
 	
 	return (	
-		<div className="flex flex-1 items-center justify-between p-4 sm:p-24">
-			<div className="flex flex-shrink items-center sm:w-224">
-				{/* <Hidden lgUp>
-					<IconButton
-						onClick={ev => {
-							props.pageLayout.current.toggleLeftSidebar();
-						}}
-						aria-label="open left sidebar"
-					>
-						<Icon>menu</Icon>
-					</IconButton>
-				</Hidden> */}
-				{/* 화면이 작아졌을때 생기는 아이콘 */}
-				
-				<div className="flex items-center">
-					<FuseAnimate animation="transition.expandIn" delay={300}>
-						<Icon className="text-32">list</Icon>
-					</FuseAnimate>
-					<FuseAnimate animation="transition.slideLeftIn" delay={300}>
-						<Typography variant="h6" className="mx-12 hidden sm:flex">
+			<div className="flex flex-col justify-between flex-1 px-24 pt-24">
+				<div className="flex justify-between items-start">
+					<Breadcrumbs separator={<NavigateNextIcon  fontSize="small" />}  className="text-16 md:text-16" variant="h5">
+						<Link color="inherit" href="/apps/dashboards/project" onClick={handleClick} className={classes.link}>
+							<HomeIcon className={classes.icon} />
+						</Link>
+						<Link color="inherit" href="/apps/contacts/all" onClick={handleClick}>
 							Patient List
-						</Typography>
-					</FuseAnimate>
+						</Link>
+					</Breadcrumbs>
+
+					<Typography className="text-24 md:text-24" variant="h4">
+						<Clock format={'MM/DD/YYYY HH:mm:ss'} ticking={true} timezone={'asia/seoul'}/>
+					</Typography>
 				</div>
-			</div>
-			
-			<div className="flex flex-1 items-center justify-center px-8 sm:px-12">
-				<ThemeProvider theme={mainTheme}>
-				<Clock />
+				<div className="flex justify-between items-start">
+					<Typography className="py-0 sm:py-24 text-24 md:text-32" variant="h5">
+						Patient List
+					</Typography>
+
+					<ThemeProvider theme={mainTheme}>
 					<FuseAnimate animation="transition.slideLeftIn" delay={300}>
 						<Paper
-							className="flex p-4 items-center w-full max-w-512 h-48 px-8 py-4 rounded-8"
+							className="flex p-4 items-center w-full max-w-512 h-48 px-8 py-4 mt-24 rounded-8"
 							elevation={1}
 						>
 							<Icon color="action">search</Icon>
@@ -68,8 +77,8 @@ function ContactsHeader(props) {
 						</Paper>
 					</FuseAnimate>
 				</ThemeProvider>
-			</div>
-		</div>
+				</div>
+			</div>	
 	);
 }
 

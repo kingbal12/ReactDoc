@@ -45,13 +45,21 @@ const navigationConfig = [
 				url: '/apps/dashboards/project'
 				// url: '/apps/home' url 변경을 config에서 해주면 잘 됨
 			},
+			// {
+			// 	id: 'file-manager',
+			// 	title: 'Schedule',
+			// 	// translate: 'FILE_MANAGER', // 주석을 풀면 navbar 상에서 FileManager로 바뀝니다.
+			// 	type: 'item',
+			// 	icon: 'mail',
+			// 	url: '/apps/file-manager'
+			// },
 			{
-				id: 'file-manager',
-				title: 'Schedule',
+				id: 'Schedule2',
+				title: 'Schedule Test',
 				// translate: 'FILE_MANAGER', // 주석을 풀면 navbar 상에서 FileManager로 바뀝니다.
 				type: 'item',
 				icon: 'mail',
-				url: '/apps/file-manager'
+				url: '/apps/schedule'
 			},
 			{
 				id: 'calendar',
@@ -61,19 +69,19 @@ const navigationConfig = [
 				icon: 'today',
 				url: '/apps/calendar'
 			},
-			{
-				id: 'mail',
-				title: 'Notice',
-				// translate: 'MAIL',
-				type: 'item',
-				icon: 'notifications',
-				url: '/apps/mail',
-				// badge: {
-				// 	title: 25,
-				// 	bg: '#F44336',
-				// 	fg: '#FFFFFF'
-				// }
-			},
+			// {
+			// 	id: 'mail',
+			// 	title: 'Notice',
+			// 	// translate: 'MAIL',
+			// 	type: 'item',
+			// 	icon: 'notifications',
+			// 	url: '/apps/mail',
+			// 	// badge: {
+			// 	// 	title: 25,
+			// 	// 	bg: '#F44336',
+			// 	// 	fg: '#FFFFFF'
+			// 	// }
+			// },
 			{
 				id: 'contacts',
 				title: 'Patient List',

@@ -1,28 +1,29 @@
 import FuseAnimateGroup from '@fuse/core/FuseAnimateGroup';
 import FusePageSimple from '@fuse/core/FusePageSimple';
-import Hidden from '@material-ui/core/Hidden';
-import Icon from '@material-ui/core/Icon';
-import IconButton from '@material-ui/core/IconButton';
-import Menu from '@material-ui/core/Menu';
-import MenuItem from '@material-ui/core/MenuItem';
 import { makeStyles } from '@material-ui/core/styles';
-import Tab from '@material-ui/core/Tab';
-import Tabs from '@material-ui/core/Tabs';
 import Typography from '@material-ui/core/Typography';
 import withReducer from 'app/store/withReducer';
-import clsx from 'clsx';
 import _ from '@lodash';
 import React, { useEffect, useRef, useState } from 'react';
 import { useDispatch, useSelector } from 'react-redux';
 import reducer from './store';
 import { selectProjects, getProjects } from './store/projectsSlice';
 import { getWidgets, selectWidgets } from './store/widgetsSlice';
+import Clock from 'react-live-clock';
+import Breadcrumbs from '@material-ui/core/Breadcrumbs';
+import HomeIcon from '@material-ui/icons/Home';
+import Link from '@material-ui/core/Link';
+import NavigateNextIcon from '@material-ui/icons/NavigateNext';
 
 import Widget1 from './widgets/Widget1';
 import Widget2 from './widgets/Widget2';
 import Widget3 from './widgets/Widget3';
 import Widget7 from './widgets/Widget7';
 
+function handleClick(event) {
+	event.preventDefault();
+	console.info('You clicked a breadcrumb.');
+}
 
 const useStyles = makeStyles(theme => ({
 	content: {
@@ -102,18 +103,20 @@ function ProjectDashboardApp(props) {
 			header={
 				<div className="flex flex-col justify-between flex-1 px-24 pt-24">
 					<div className="flex justify-between items-start">
-						<Typography className="py-0 sm:py-24 text-24 md:text-32" variant="h4">
+						<Breadcrumbs separator={<NavigateNextIcon fontSize="small" />} aria-label="breadcrumb" className="text-16 md:text-16" variant="h5">
+							<Link color="inherit" href="/apps/dashboards/project" onClick={handleClick} className={classes.link}>
+								<HomeIcon className={classes.icon} />
+							</Link>
+						</Breadcrumbs>
+
+						<Typography className="text-24 md:text-24" variant="h4">
+							<Clock format={'MM/DD/YYYY HH:mm:ss'} ticking={true} timezone={'asia/seoul'}/>
+						</Typography>
+					</div>
+					<div className="flex justify-between items-start">
+						<Typography className="py-0 sm:py-24 text-24 md:text-32" variant="h5">
 							Welcome! John!
 						</Typography>
-						<Hidden lgUp>
-							<IconButton
-								onClick={ev => pageLayout.current.toggleRightSidebar()}
-								aria-label="open left sidebar"
-								color="inherit"
-							>
-								<Icon>menu</Icon>
-							</IconButton>
-						</Hidden>
 					</div>
 				</div>
 			}
