@@ -5,7 +5,7 @@ const mailDB = {
 		{
 			id: '15459251a6d6b397565',
 			from: {
-				name: '서비스 변경 작업',
+				name: '[긴급] 서비스 긴급 공지 합니다.',
 				avatar: 'assets/images/avatars/alice.jpg',
 				email: 'alicefreeman@creapond.com'
 			},
@@ -15,10 +15,10 @@ const mailDB = {
 					email: 'johndoe@creapond.com'
 				}
 			],
-			subject: '11월 11일 서비스 변경 작업을 진행할 예정입니다.',
+			subject: '11월 11일 서비스 테스트가 있을 예정입니다.',
 			message:
 				'<p>서비스 진행 사항을 알려드립니다. Lorem ipsum dolor sit amet, consectetur adipiscing elit. Fusce lorem diam, pulvinar id nisl non, ultrices maximus nibh. Suspendisse ut justo velit. Nullam ac ultrices risus, quis auctor orci. Vestibulum volutpat nisi et neque porta ullamcorper. Maecenas porttitor porta erat ac suscipit. Sed cursus leo ut elementum fringilla. Maecenas semper viverra erat, vel ullamcorper dui efficitur in. Vestibulum placerat imperdiet tellus, et tincidunt eros posuere eget. Proin sit amet facilisis libero. Nulla eget est ut erat aliquet rhoncus. Quisque ac urna vitae dui hendrerit sollicitudin vel id sem. </p><p> In eget ante sapien. Quisque consequat velit non ante finibus, vel placerat erat ultricies. Aliquam bibendum justo erat, ultrices vehicula dolor elementum a. Mauris eu nisl feugiat ligula molestie eleifend. Aliquam efficitur venenatis velit ac porta. Vivamus vitae pulvinar tellus. Donec odio enim, auctor eget nibh mattis, ultricies dignissim lacus. Phasellus non tincidunt dui. Nulla eu arcu lorem. </p><p> Donec non hendrerit augue, lobortis sollicitudin odio. Class aptent taciti sociosqu ad litora torquent per conubia nostra, per inceptos himenaeos. Duis sit amet euismod enim, eget vestibulum justo. Fusce a placerat lectus, eget feugiat purus. Cras risus ante, faucibus eget justo commodo, volutpat tempor ante. Donec sit amet leo venenatis, gravida quam sit amet, blandit dui. In quam ante, elementum ut faucibus nec, tristique vitae dui. Praesent vel erat at enim placerat luctus vel ut ipsum. In congue tempor mi, non ornare lectus condimentum at. Aenean libero diam, finibus eget sapien et, tristique fermentum lorem. </p>',
-			time: '28 Jun',
+			time: '11.11.2020',
 			read: false,
 			starred: false,
 			important: true,
@@ -52,7 +52,7 @@ const mailDB = {
 		{
 			id: '154588a0864d2881124',
 			from: {
-				name: 'Lawrence Collins',
+				name: '[긴급] 01 ~ 03 시 까지 정기 백업 진행 합니다.',
 				avatar: 'assets/images/avatars/vincent.jpg',
 				email: 'lawrencecollins@creapond.com'
 			},
@@ -62,10 +62,10 @@ const mailDB = {
 					email: 'johndoe@creapond.com'
 				}
 			],
-			subject: 'Commits that need to be pushed lorem ipsum dolor sit amet, consectetur adipiscing elit.',
+			subject: '새벽 정기백업이 진행되므로 서비스 사용이 불가합니다.',
 			message:
 				'<p>테스트 진행중입니다. Lorem ipsum dolor sit amet, consectetur adipiscing elit. Fusce lorem diam, pulvinar id nisl non, ultrices maximus nibh. Suspendisse ut justo velit. Nullam ac ultrices risus, quis auctor orci. Vestibulum volutpat nisi et neque porta ullamcorper. Maecenas porttitor porta erat ac suscipit. Sed cursus leo ut elementum fringilla. Maecenas semper viverra erat, vel ullamcorper dui efficitur in. Vestibulum placerat imperdiet tellus, et tincidunt eros posuere eget. Proin sit amet facilisis libero. Nulla eget est ut erat aliquet rhoncus. Quisque ac urna vitae dui hendrerit sollicitudin vel id sem. </p><p> In eget ante sapien. Quisque consequat velit non ante finibus, vel placerat erat ultricies. Aliquam bibendum justo erat, ultrices vehicula dolor elementum a. Mauris eu nisl feugiat ligula molestie eleifend. Aliquam efficitur venenatis velit ac porta. Vivamus vitae pulvinar tellus. Donec odio enim, auctor eget nibh mattis, ultricies dignissim lacus. Phasellus non tincidunt dui. Nulla eu arcu lorem. </p><p> Donec non hendrerit augue, lobortis sollicitudin odio. Class aptent taciti sociosqu ad litora torquent per conubia nostra, per inceptos himenaeos. Duis sit amet euismod enim, eget vestibulum justo. Fusce a placerat lectus, eget feugiat purus. Cras risus ante, faucibus eget justo commodo, volutpat tempor ante. Donec sit amet leo venenatis, gravida quam sit amet, blandit dui. In quam ante, elementum ut faucibus nec, tristique vitae dui. Praesent vel erat at enim placerat luctus vel ut ipsum. In congue tempor mi, non ornare lectus condimentum at. Aenean libero diam, finibus eget sapien et, tristique fermentum lorem. </p>',
-			time: '28 Jun',
+			time: '11.05.2020',
 			read: false,
 			starred: false,
 			important: false,
@@ -76,7 +76,7 @@ const mailDB = {
 		{
 			id: '15453ba60d3baa5daaf',
 			from: {
-				name: 'Judith Burton',
+				name: '서비스 안정화 작업 있습니다.',
 				avatar: 'assets/images/avatars/joyce.jpg',
 				email: 'judithburton@creapond.com'
 			},
@@ -89,7 +89,7 @@ const mailDB = {
 			subject: 'Commits that need to be pushed lorem ipsum dolor sit amet, consectetur adipiscing elit.',
 			message:
 				'<p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Fusce lorem diam, pulvinar id nisl non, ultrices maximus nibh. Suspendisse ut justo velit. Nullam ac ultrices risus, quis auctor orci. Vestibulum volutpat nisi et neque porta ullamcorper. Maecenas porttitor porta erat ac suscipit. Sed cursus leo ut elementum fringilla. Maecenas semper viverra erat, vel ullamcorper dui efficitur in. Vestibulum placerat imperdiet tellus, et tincidunt eros posuere eget. Proin sit amet facilisis libero. Nulla eget est ut erat aliquet rhoncus. Quisque ac urna vitae dui hendrerit sollicitudin vel id sem. </p><p> In eget ante sapien. Quisque consequat velit non ante finibus, vel placerat erat ultricies. Aliquam bibendum justo erat, ultrices vehicula dolor elementum a. Mauris eu nisl feugiat ligula molestie eleifend. Aliquam efficitur venenatis velit ac porta. Vivamus vitae pulvinar tellus. Donec odio enim, auctor eget nibh mattis, ultricies dignissim lacus. Phasellus non tincidunt dui. Nulla eu arcu lorem. </p><p> Donec non hendrerit augue, lobortis sollicitudin odio. Class aptent taciti sociosqu ad litora torquent per conubia nostra, per inceptos himenaeos. Duis sit amet euismod enim, eget vestibulum justo. Fusce a placerat lectus, eget feugiat purus. Cras risus ante, faucibus eget justo commodo, volutpat tempor ante. Donec sit amet leo venenatis, gravida quam sit amet, blandit dui. In quam ante, elementum ut faucibus nec, tristique vitae dui. Praesent vel erat at enim placerat luctus vel ut ipsum. In congue tempor mi, non ornare lectus condimentum at. Aenean libero diam, finibus eget sapien et, tristique fermentum lorem. </p>',
-			time: '28 Jun',
+			time: '10.01.2020',
 			read: true,
 			starred: false,
 			important: false,
@@ -100,7 +100,7 @@ const mailDB = {
 		{
 			id: '15453a06c08fb021776',
 			from: {
-				name: 'Danielle Obrien',
+				name: '서비스 안정화 작업이 아래와 같은 일정으로 예정되어 있습니다.',
 				avatar: 'assets/images/avatars/danielle.jpg',
 				email: 'danielleobrien@creapond.com'
 			},

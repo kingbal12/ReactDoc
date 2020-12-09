@@ -19,38 +19,21 @@ import ExpandMoreIcon from '@material-ui/icons/ExpandMore';
 const pathToRegexp = require('path-to-regexp');
 
 const useStyles = makeStyles(theme => ({
-	// mailItem: {
-	// 	borderBottom: `1px solid  ${theme.palette.divider}`,
-
-	// 	'&.unread': {
-	// 		background: 'rgba(0,0,0,0.03)'
-	// 	},
-	// 	'&.selected': {
-	// 		'&::after': {
-	// 			content: '""',
-	// 			position: 'absolute',
-	// 			left: 0,
-	// 			display: 'block',
-	// 			height: '100%',
-	// 			width: 3,
-	// 			backgroundColor: theme.palette.primary.main
-	// 		}
-	// 	}
-	// },
-	// avatar: {
-	// 	backgroundColor: theme.palette.primary[500]
-	// },
 	root: {
 		width: '95%',
 		marginLeft: '40px'
 	  },
-	  heading: {
+
+	  date: {
 		fontSize: theme.typography.pxToRem(15),
 		fontWeight: theme.typography.fontWeightRegular,
 	  },
-	  
-	  
-	
+
+	  heading: {
+		marginLeft: '20px',
+		fontSize: theme.typography.pxToRem(15),
+		fontWeight: theme.typography.fontWeightRegular,
+	  }
 }));
 
 const MailListItem = props => {
@@ -72,7 +55,8 @@ const MailListItem = props => {
 					aria-controls="panel1a-content"
 					id="panel1a-header"
 					>
-					<Typography className={classes.heading}>{props.mail.from.name}</Typography>
+						<Typography className={classes.date}>{props.mail.time}</Typography>
+						<Typography className={classes.heading}>{props.mail.from.name}</Typography>
 					</AccordionSummary>
 					<AccordionDetails>
 					<Typography>

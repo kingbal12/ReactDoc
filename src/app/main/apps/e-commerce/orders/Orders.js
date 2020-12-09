@@ -15,10 +15,19 @@ import TimelineContent from '@material-ui/lab/TimelineContent';
 import TimelineDot from '@material-ui/lab/TimelineDot';
 import Icon from '@material-ui/core/Icon';
 import IconButton from '@material-ui/core/IconButton';
-import Clock from 'react-digital-clock';
 import Paper from '@material-ui/core/Paper';
 import FuseAnimateGroup from '@fuse/core/FuseAnimateGroup';
+import Clock from 'react-live-clock';
+import Breadcrumbs from '@material-ui/core/Breadcrumbs';
+import HomeIcon from '@material-ui/icons/Home';
+import Link from '@material-ui/core/Link';
+import NavigateNextIcon from '@material-ui/icons/NavigateNext';
+import Typography from '@material-ui/core/Typography';
 
+function handleClick(event) {
+	event.preventDefault();
+	console.info('You clicked a breadcrumb.');
+  }
 
 const useStyles = makeStyles(theme => ({
 	layoutRoot: {}
@@ -43,32 +52,27 @@ function Orders(props) {
 			root: classes.layoutRoot
 		}}
 		header={
-			<table class="w-full height">
-				<thead>
-				</thead>
-				<tbody>
-					<tr>
-					<th></th>
-					<td><h1>Patient Overview</h1></td>
-					<td>{date.toLocaleDateString()}<Clock  format= {'hh-mm-ss'}/></td>
-					</tr>
-				</tbody>
-			</table>
-			// <div className="container">
-			// 	<div className="row">
-			// 		<div className="col-5">
-			// 			<h1>
-			// 				<span>Consulting Room</span>
-							
-			// 				<span style={{marginLeft: 20 + 'em'}}>{date.toLocaleDateString()}<Clock/></span>   
-			// 			</h1>
-			// 		</div>
-					
-			// 	</div>
-				
-			// </div>
-			
-			 
+			<div className="flex flex-col justify-between flex-1 px-24 pt-24">
+				<div className="flex justify-between items-start">
+					<Breadcrumbs separator={<NavigateNextIcon color="md-light" fontSize="small" />}  className="text-16 md:text-16" variant="h5">
+						<Link color="inherit" href="/apps/dashboards/project" onClick={handleClick} className={classes.link}>
+							<HomeIcon className={classes.icon} />
+						</Link>
+						<Link color="inherit" href="/apps/e-commerce/orders" onClick={handleClick}>
+							Consulting Room
+						</Link>
+					</Breadcrumbs>
+
+					<Typography className="text-24 md:text-24" variant="h4">
+						<Clock format={'MM/DD/YYYY HH:mm:ss'} ticking={true} timezone={'asia/seoul'}/>
+					</Typography>
+				</div>
+				<div className="flex justify-between items-start">
+					<Typography className="py-0 sm:py-24 text-24 md:text-32" variant="h5">
+						Consulting Room
+					</Typography>
+				</div>
+			</div> 
 		}
 		contentToolbar={
 			<Table>

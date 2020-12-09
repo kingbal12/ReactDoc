@@ -18,6 +18,17 @@ import IconButton from '@material-ui/core/IconButton';
 import Paper from '@material-ui/core/Paper';
 import FuseAnimateGroup from '@fuse/core/FuseAnimateGroup';
 import Clock from 'react-live-clock';
+import Breadcrumbs from '@material-ui/core/Breadcrumbs';
+import HomeIcon from '@material-ui/icons/Home';
+import Link from '@material-ui/core/Link';
+import NavigateNextIcon from '@material-ui/icons/NavigateNext';
+import Typography from '@material-ui/core/Typography';
+import { useHistory } from "react-router-dom";
+
+function handleClick(event) {
+	event.preventDefault();
+	console.info('You clicked a breadcrumb.');
+  }
 
 const useStyles = makeStyles(theme => ({
 	layoutRoot: {}
@@ -25,6 +36,7 @@ const useStyles = makeStyles(theme => ({
 
 
 function Products(props) {
+	const history = useHistory();
 	const classes = useStyles(props);
 	const { t } = useTranslation('examplePage');
 	
@@ -35,33 +47,27 @@ function Products(props) {
 			root: classes.layoutRoot
 		}}
 		header={
-			// <table class="w-full height">
-			// 	<thead>
-			// 	</thead>
-			// 	<tbody>
-			// 		<tr>
-			// 		<th></th>
-			// 		<td><h1>Patient Overview</h1></td>
-			// 		<td></td>
-			// 		<td class="text-right"><Clock format={'MM/DD/YYYY HH:mm:ss'} ticking={true} timezone={'US/Pacific'}/></td>
-			// 		</tr>
-			// 	</tbody>
-			// </table>
-			
-			
-				<div className="w-full row">
-					<h1>
-						<span className="w-50">Patient Overview</span>
-						<span style={{marginRight: 5 + 'em'}}><Clock format={'MM/DD/YYYY HH:mm:ss'} ticking={true} timezone={'asia/seoul'}/></span>
-					</h1>
-					
-					
+			<div className="flex flex-col justify-between flex-1 px-24 pt-24">
+				<div className="flex justify-between items-start">
+					<Breadcrumbs separator={<NavigateNextIcon color="md-light" fontSize="small" />}  className="text-16 md:text-16" variant="h5">
+						<Link color="inherit" href="/apps/dashboards/project" onClick={handleClick} className={classes.link}>
+							<HomeIcon className={classes.icon} />
+						</Link>
+						<Link color="inherit" href="/apps/e-commerce/products" onClick={handleClick}>
+							Patient OverView
+						</Link>
+					</Breadcrumbs>
+
+					<Typography className="text-24 md:text-24" variant="h4">
+						<Clock format={'MM/DD/YYYY HH:mm:ss'} ticking={true} timezone={'asia/seoul'}/>
+					</Typography>
 				</div>
-				
-			
-			
-			
-			 
+				<div className="flex justify-between items-start">
+					<Typography className="py-0 sm:py-24 text-24 md:text-32" variant="h5">
+						Patient OverView
+					</Typography>
+				</div>
+			</div> 
 		}
 		contentToolbar={
 			<Table>
@@ -86,7 +92,9 @@ function Products(props) {
 							</IconButton>
 						</TableCell>
 						<TableCell className="hidden sm:table-cell">
-							<Icon>play_arrow</Icon>
+							<IconButton onClick={() => history.push("/apps/e-commerce/orders")}>
+								<Icon>play_arrow</Icon>
+							</IconButton>
 						</TableCell>
 					</TableRow>
 					</TableBody>
