@@ -40,38 +40,70 @@ function ContactsList(props) {
 			// },
 			{
 				Header: '',
-				accessor: 'regdate',
-				className: 'font-bold',
+				accessor: 'status',
 				sortable: true
 			},
 			{
 				Header: 'Name',
-				accessor: 'lastName',
+				accessor: 'name',
 				className: 'font-bold',
 				sortable: true
 			},
 			{
-				Header: 'Symptom',
-				accessor: 'company',
+				Header: 'Gender',
+				accessor: 'gender',
 				sortable: true
 			},
 			{
-				Header: 'Check',
-				accessor: 'jobTitle',
+				Header: 'Date of Birth',
+				accessor: 'birth',
 				sortable: true
 			},
-			// {
-			// 	Header: 'Email',
-			// 	accessor: 'email',
-			// 	sortable: true
-			// },
-			// {
-			// 	Header: 'Phone',
-			// 	accessor: 'phone',
-			// 	sortable: true
-			// },
 			{
-				id: 'action',
+				Header: 'Diagnosis',
+				accessor: 'diagnosis',
+				sortable: true
+			},
+			{
+				Header: 'Vital Data',
+				id: 'VD',
+				width: 128,
+				sortable: false,
+				Cell: ({ row }) => (
+					<div className="flex items-center">
+						<IconButton
+							onClick={ev => {
+								ev.stopPropagation();
+								dispatch((ev) => history.push("/apps/e-commerce/products"));
+							}}
+							// onClick={() => history.push("/apps/e-commerce/orders")}
+						>
+							<Icon>assessment</Icon>
+						</IconButton>
+					</div>
+				)
+			},
+			{
+				Header: 'Consult List',
+				id: 'CL',
+				width: 128,
+				sortable: false,
+				Cell: ({ row }) => (
+					<div className="flex items-center">
+						<IconButton
+							onClick={ev => {
+								ev.stopPropagation();
+								dispatch((ev) => history.push("/apps/e-commerce/products"));
+							}}
+							// onClick={() => history.push("/apps/e-commerce/orders")}
+						>
+							<Icon>featured_play_list</Icon>
+						</IconButton>
+					</div>
+				)
+			},
+			{	Header: 'Message',
+				id: 'message',
 				width: 128,
 				sortable: false,
 				Cell: ({ row }) => (
@@ -89,14 +121,23 @@ function ContactsList(props) {
 								<Icon>email_border</Icon>
 							)}
 						</IconButton>
+					</div>
+				)
+			},
+			{	Header: 'Overview',
+				id: 'PO',
+				width: 128,
+				sortable: false,
+				Cell: ({ row }) => (
+					<div className="flex items-center">
 						<IconButton
 							onClick={ev => {
 								ev.stopPropagation();
-								dispatch((ev) => history.push("/apps/e-commerce/orders"));
+								dispatch((ev) => history.push("/apps/e-commerce/products"));
 							}}
 							// onClick={() => history.push("/apps/e-commerce/orders")}
 						>
-							<Icon>play_arrow</Icon>
+							<Icon>description</Icon>
 						</IconButton>
 					</div>
 				)

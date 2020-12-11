@@ -22,56 +22,37 @@ function ContactsList(props) {
 
 	const columns = React.useMemo(
 		() => [
-			// {
-			// 	Header: ({ selectedFlatRows }) => {
-			// 		const selectedRowIds = selectedFlatRows.map(row => row.original.id);
-
-			// 		return (
-			// 			selectedFlatRows.length > 0 && <ContactsMultiSelectMenu selectedContactIds={selectedRowIds} />
-			// 		);
-			// 	},
-			// 	accessor: 'avatar',
-			// 	Cell: ({ row }) => {
-			// 		return <Avatar className="mx-8" alt={row.original.name} src={row.original.avatar} />;
-			// 	},
-			// 	className: 'justify-center',
-			// 	width: 64,
-			// 	sortable: false
-			// },
 			{
 				Header: '',
-				accessor: 'regdate',
+				accessor: 'status',
+				sortable: true,
+				width: 64,
+				sortable: false
+			},
+			{
+				Header: 'Time',
+				accessor: 'date',
 				className: 'font-bold',
 				sortable: true
 			},
 			{
 				Header: 'Name',
-				accessor: 'lastName',
+				accessor: 'name',
 				className: 'font-bold',
 				sortable: true
 			},
 			{
-				Header: 'Symptom',
-				accessor: 'company',
+				Header: 'Diagnosis',
+				accessor: 'diagnosis',
 				sortable: true
 			},
 			{
 				Header: 'Check',
-				accessor: 'jobTitle',
+				accessor: 'check',
 				sortable: true
 			},
-			// {
-			// 	Header: 'Email',
-			// 	accessor: 'email',
-			// 	sortable: true
-			// },
-			// {
-			// 	Header: 'Phone',
-			// 	accessor: 'phone',
-			// 	sortable: true
-			// },
-			{
-				id: 'action',
+			{	Header: 'Message',
+				id: 'message',
 				width: 128,
 				sortable: false,
 				Cell: ({ row }) => (
@@ -89,6 +70,15 @@ function ContactsList(props) {
 								<Icon>email_border</Icon>
 							)}
 						</IconButton>
+					</div>
+				)
+			},
+			{	Header: 'Consult',
+				id: 'Consult',
+				width: 128,
+				sortable: false,
+				Cell: ({ row }) => (
+					<div className="flex items-center">
 						<IconButton
 							onClick={ev => {
 								ev.stopPropagation();

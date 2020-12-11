@@ -5,9 +5,9 @@ import ar from './i18n/ar';
 import en from './i18n/en';
 import tr from './i18n/tr';
 
-i18next.addResourceBundle('en', 'mailApp', en);
-i18next.addResourceBundle('tr', 'mailApp', tr);
-i18next.addResourceBundle('ar', 'mailApp', ar);
+i18next.addResourceBundle('en', 'PastCunsultingApp', en);
+i18next.addResourceBundle('tr', 'PastCunsultingApp', tr);
+i18next.addResourceBundle('ar', 'PastCunsultingApp', ar);
 
 const MailAppConfig = {
 	settings: {
@@ -32,11 +32,11 @@ const MailAppConfig = {
 				'/apps/mail/filter/:filterHandle/:mailId?',
 				'/apps/mail/:folderHandle/:mailId?'
 			],
-			component: React.lazy(() => import('./MailApp'))
+			component: React.lazy(() => import('./PastCunsultingApp'))
 		},
 		{
-			path: '/apps/mail',
-			component: () => <Redirect to="/apps/mail/inbox" />
+			path: '/apps/PastConsultingList',
+			component: () => <Redirect to="/apps/PastConsultingList" />
 		}
 	]
 };

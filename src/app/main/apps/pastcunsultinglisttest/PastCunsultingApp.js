@@ -16,7 +16,7 @@ import { getFolders } from './store/foldersSlice';
 import { getLabels } from './store/labelsSlice';
 import FusePageSimple from '@fuse/core/FusePageSimple';
 
-function MailApp(props) {
+function PastCunsultingApp(props) {
 	const dispatch = useDispatch();
 
 	const pageLayout = useRef(null);
@@ -46,4 +46,4 @@ function MailApp(props) {
 	);
 }
 
-export default withReducer('mailApp', reducer)(MailApp);
+export default withReducer('PastCunsultingApp', reducer)(PastCunsultingApp);
