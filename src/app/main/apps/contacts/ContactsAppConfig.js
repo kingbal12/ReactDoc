@@ -25,7 +25,11 @@ const ContactsAppConfig = {
 		{
 			path: '/apps/contacts',
 			component: () => <Redirect to="/apps/contacts/all" />
-		}
+		},
+		// {
+		// 	path: '/apps/contacts/vitaldata',
+		// 	component: React.lazy(() => import('./VitalData'))
+		// }
 	]
 };
 

@@ -3,10 +3,26 @@ import axios from 'axios';
 
 export const getMails = createAsyncThunk('mailApp/mails/getMails', async (routeParams, { getState }) => {
 	routeParams = routeParams || getState().mailApp.mails.routeParams;
-	const response = await axios.get('/api/mail-app/mails', {
+	const response = await axios.get('http://192.168.0.45:9200/doctor/notice/getList', {
 		params: routeParams
 	});
-	const data = await response.data;
+
+	// const data = {
+	// 	foo: 42,
+	// 	bar: 1337,
+		
+	//   };
+
+	console.log("@@@@@@@@@@@@@@@@");
+	// const data = JSON.parse("{'foo':42,'bar':1337}");
+	const mail = await response.data;
+	console.log(mail)
+	console.log("@@@@@@@@@@@@@@@@");
+	const data = JSON.parse(mail);
+	console.log(data)
+
+	
+	
 
 	return { data, routeParams };
 });

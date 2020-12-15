@@ -34,7 +34,7 @@ function MailAppHeader(props) {
 	return (
 			<div className="flex flex-col justify-between flex-1 px-24 pt-24">
 				<div className="flex justify-between items-start">
-					<Breadcrumbs separator={<NavigateNextIcon color="md-light" fontSize="small" />}  className="text-16 md:text-16" variant="h5">
+					<Breadcrumbs separator={<NavigateNextIcon fontSize="small" />}  className="text-16 md:text-16" variant="h5">
 						<Link color="inherit" href="/apps/dashboards/project" onClick={handleClick} className={classes.link}>
 							<HomeIcon className={classes.icon} />
 						</Link>

@@ -38,13 +38,15 @@ const useStyles = makeStyles(theme => ({
 
 const MailListItem = props => {
 	const dispatch = useDispatch();
-	const selectedMailIds = useSelector(({ mailApp }) => mailApp.mails.selectedMailIds);
+	// const selectedMailIds = useSelector(({ mailApp }) => mailApp.mails.selectedMailIds);
 	const labels = useSelector(selectLabelsEntities);
 	const routeParams = useParams();
 
 	const classes = useStyles(props);
+	console.log(props.mail.date);
+	console.log('******************')
 	const toPath = pathToRegexp.compile(props.match.path);
-	const checked = selectedMailIds.length > 0 && selectedMailIds.find(id => id === props.mail.id) !== undefined;
+	// const checked = selectedMailIds.length > 0 && selectedMailIds.find(id => id === props.mail.id) !== undefined;
 
 	return (
 		<div className="flex">
@@ -55,12 +57,12 @@ const MailListItem = props => {
 					aria-controls="panel1a-content"
 					id="panel1a-header"
 					>
-						<Typography className={classes.date}>{props.mail.time}</Typography>
-						<Typography className={classes.heading}>{props.mail.from.name}</Typography>
+						<Typography className={classes.date}>{props.mail.date}</Typography>
+						<Typography className={classes.heading}>{props.mail.title}</Typography>
 					</AccordionSummary>
 					<AccordionDetails>
 					<Typography>
-						{props.mail.subject}
+						{props.mail.content}
 					</Typography>
 					</AccordionDetails>
 				</Accordion>
